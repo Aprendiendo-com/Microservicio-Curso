@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservicio.Curso", "Microservicio.Curso\Microservicio.Curso.csproj", "{CAC65804-C2E2-427F-B93B-4F3BB8CC013B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CAC65804-C2E2-427F-B93B-4F3BB8CC013B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC65804-C2E2-427F-B93B-4F3BB8CC013B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC65804-C2E2-427F-B93B-4F3BB8CC013B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC65804-C2E2-427F-B93B-4F3BB8CC013B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D181F33-9730-4465-8702-C9C549D3E5C1}
+	EndGlobalSection
+EndGlobal
