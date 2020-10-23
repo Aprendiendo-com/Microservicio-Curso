@@ -14,5 +14,8 @@ namespace Capa.Domain.Services
 
         Task<CursoCompletoDTO> GetCursoById(int idCurso);
 
+
+        Task<List<CursoCompletoDTO>> GetCursoByIdLista(List<int> idCursos);
+
     }
 }

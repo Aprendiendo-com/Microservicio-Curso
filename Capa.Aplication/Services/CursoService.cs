@@ -89,5 +89,45 @@ namespace Capa.Aplication.Services
                 return cuestionarioDeClase;
             }
         }
+
+
+
+
+
+        public async Task<List<CursoCompletoDTO>> GetCursoByIdLista(List<int> idCursos)
+        {
+            
+            Curso curso;
+            CursoCompletoDTO cursoCompleto;
+            List<Clase> clases;
+            List<ClaseConCuestionarioDTO> clasesCompletas;
+            List<CursoCompletoDTO> cursosCompletos = new List<CursoCompletoDTO>();
+            foreach (int idCurso in idCursos)
+            {
+                curso = repository.Traer<Curso>().FirstOrDefault(x => x.CursoId == idCurso);
+                cursoCompleto = new CursoCompletoDTO()
+                {
+                    Nombre = curso.Nombre,
+                    Descripcion = curso.Descripcion,
+                    Cantidad = curso.Cantidad,
+                    ProfesorId = curso.ProfesorId,
+                    CategoriaId = curso.CategoriaId
+                };
+                clases = repository.Traer<Clase>().Where(x => x.CursoId == idCurso).ToList();
+                clasesCompletas = new List<ClaseConCuestionarioDTO>();
+                foreach (Clase clase in clases)
+                {
+                    clasesCompletas.Add(await GetByIdConCuestionarios(clase.ClaseId));
+                }
+                cursoCompleto.ClasesNavegacion = clasesCompletas;
+                cursosCompletos.Add(cursoCompleto);
+            }
+            return cursosCompletos;
+
+
+        }
+
+
+
     }
 }

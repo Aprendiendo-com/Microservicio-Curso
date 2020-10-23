@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Capa.Domain.DTO;
+using Capa.Domain.DTO.CuestionarioDTO;
 using Capa.Domain.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +42,19 @@ namespace Microservicio.Curso.Controllers
             try
             {
                 return new JsonResult(await service.GetCursoById(idCurso)) { StatusCode = 200 };
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        
+        [HttpPatch("GetCursosByLista")]
+        public async Task<IActionResult> GetCursosByLista(List<int> idCursos)
+        {
+            try
+            {
+                return new JsonResult(await service.GetCursoByIdLista(idCursos)) { StatusCode = 200 };
             }
             catch (Exception ex)
             {
