@@ -1,6 +1,7 @@
 ﻿using Capa.Aplication.Services.Base;
 using Capa.Domain.DTO;
 using Capa.Domain.DTO.CuestionarioDTO;
+using Capa.Domain.DTO.CursoResponseDTO;
 using Capa.Domain.Entities;
 using Capa.Domain.Queries;
 using Capa.Domain.Services;
@@ -30,7 +31,8 @@ namespace Capa.Aplication.Services
                 Descripcion = cursoDTO.Descripcion,
                 Nombre = cursoDTO.Nombre,
                 CategoriaId = cursoDTO.CategoriaId,
-                ProfesorId = cursoDTO.ProfesorId
+                ProfesorId = cursoDTO.ProfesorId,
+                Imagen = cursoDTO.Imagen
             };
 
             this.Repository.Add(Curso);
@@ -50,7 +52,8 @@ namespace Capa.Aplication.Services
                 Descripcion = curso.Descripcion,
                 Cantidad = curso.Cantidad,
                 ProfesorId = curso.ProfesorId,
-                CategoriaId = curso.CategoriaId
+                CategoriaId = curso.CategoriaId,
+                Imagen = curso.Imagen
             };
             List<Clase> clases = repository.Traer<Clase>().Where(x => x.CursoId == idCurso).ToList();
             List<ClaseConCuestionarioDTO> clasesCompletas = new List<ClaseConCuestionarioDTO>();
@@ -111,7 +114,8 @@ namespace Capa.Aplication.Services
                     Descripcion = curso.Descripcion,
                     Cantidad = curso.Cantidad,
                     ProfesorId = curso.ProfesorId,
-                    CategoriaId = curso.CategoriaId
+                    CategoriaId = curso.CategoriaId,
+                    Imagen = curso.Imagen
                 };
                 clases = repository.Traer<Clase>().Where(x => x.CursoId == idCurso).ToList();
                 clasesCompletas = new List<ClaseConCuestionarioDTO>();
@@ -123,11 +127,33 @@ namespace Capa.Aplication.Services
                 cursosCompletos.Add(cursoCompleto);
             }
             return cursosCompletos;
-
-
         }
 
 
+
+
+
+
+        public List<CursoResponseDTO> GetAll()
+        {
+            var lista_cursos = new List<CursoResponseDTO>();
+            var cursos = repository.Traer<Curso>().ToList();
+            foreach(var curso in cursos)
+            {
+                var curso_response = new CursoResponseDTO
+                {
+                    CursoId = curso.CursoId,
+                    Nombre = curso.Nombre,
+                    Descripcion = curso.Descripcion,
+                    Cantidad = curso.Cantidad,
+                    ProfesorId = curso.ProfesorId,
+                    CategoriaId = curso.CategoriaId,
+                    Imagen = curso.Imagen
+                };
+                lista_cursos.Add(curso_response);
+            }
+            return lista_cursos;
+        }
 
     }
 }

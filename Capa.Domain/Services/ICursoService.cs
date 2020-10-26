@@ -1,6 +1,7 @@
 ﻿using Capa.Domain.Command.BaseService;
 using Capa.Domain.DTO;
 using Capa.Domain.DTO.CuestionarioDTO;
+using Capa.Domain.DTO.CursoResponseDTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,6 +17,10 @@ namespace Capa.Domain.Services
 
 
         Task<List<CursoCompletoDTO>> GetCursoByIdLista(List<int> idCursos);
+
+
+
+        List<CursoResponseDTO> GetAll();
 
     }
 }

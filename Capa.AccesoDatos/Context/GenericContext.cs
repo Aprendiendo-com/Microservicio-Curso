@@ -86,6 +86,7 @@ namespace Capa.AccesoDatos.Context
                 entity.Property(x => x.Descripcion).HasMaxLength(250).IsRequired();
                 entity.Property(x => x.Nombre).HasMaxLength(50).IsRequired();
                 entity.Property(x => x.ProfesorId).HasMaxLength(250).IsRequired();
+                entity.Property(x => x.Imagen).HasMaxLength(250).IsRequired();
 
                 entity.HasOne(x => x.CategoriaNavegacion)
                 .WithMany(x => x.CursoNavegacion)

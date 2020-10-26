@@ -61,5 +61,19 @@ namespace Microservicio.Curso.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
+        {
+            try
+            {
+                return new JsonResult(service.GetAll()) { StatusCode = 200 };
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

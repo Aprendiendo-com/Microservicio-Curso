@@ -2,7 +2,7 @@
 
 namespace Capa.AccesoDatos.Migrations
 {
-    public partial class CreateMigration : Migration
+    public partial class Migrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,7 +29,8 @@ namespace Capa.AccesoDatos.Migrations
                     Descripcion = table.Column<string>(maxLength: 250, nullable: false),
                     Cantidad = table.Column<int>(nullable: false),
                     ProfesorId = table.Column<int>(maxLength: 250, nullable: false),
-                    CategoriaId = table.Column<int>(nullable: false)
+                    CategoriaId = table.Column<int>(nullable: false),
+                    Imagen = table.Column<string>(maxLength: 250, nullable: false)
                 },
                 constraints: table =>
                 {

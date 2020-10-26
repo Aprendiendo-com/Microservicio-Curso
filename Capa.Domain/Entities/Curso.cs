@@ -12,6 +12,7 @@ namespace Capa.Domain.Entities
         public int Cantidad { get; set; }
         public int ProfesorId { get; set; }
         public int CategoriaId { get; set; }
+        public string Imagen { get; set; }
         public virtual Categoria CategoriaNavegacion { get; set; }
         public virtual ICollection<Clase> ClasesNavegacion { get; set; }
 
