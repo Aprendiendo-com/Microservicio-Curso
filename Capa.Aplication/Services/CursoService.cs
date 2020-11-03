@@ -99,7 +99,7 @@ namespace Capa.Aplication.Services
 
         public async Task<List<CursoCompletoDTO>> GetCursoByIdLista(List<int> idCursos)
         {
-            
+            //GET CURSO BY ID LISTA
             Curso curso;
             CursoCompletoDTO cursoCompleto;
             List<Clase> clases;
