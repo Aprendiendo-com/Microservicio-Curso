@@ -6,6 +6,7 @@ namespace Capa.Domain.DTO.CuestionarioDTO
 {
     public class ClaseConCuestionarioDTO
     {
+        public int ClaseId { get; set; }
         public string Descripcion { get; set; }
         public string Tema { get; set; }
         public int CursoId { get; set; }

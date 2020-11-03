@@ -25,6 +25,7 @@ namespace Capa.AccesoDatos.Queries
         {
             var claseDTO = new ClaseConCuestionarioDTO()
             {
+                ClaseId = claseOriginal.ClaseId,
                 Descripcion = claseOriginal.Descripcion,
                 Tema = claseOriginal.Tema,
                 CursoId = claseOriginal.CursoId,
