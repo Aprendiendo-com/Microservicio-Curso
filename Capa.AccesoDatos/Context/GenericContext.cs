@@ -49,8 +49,8 @@ namespace Capa.AccesoDatos.Context
             {
                 entity.HasKey(x => x.ClaseId);
 
-                entity.Property(x => x.Descripcion).HasMaxLength(250).IsRequired();
-                entity.Property(x => x.Tema).HasMaxLength(250).IsRequired();
+                entity.Property(x => x.Descripcion).HasMaxLength(4096).IsRequired();
+                entity.Property(x => x.Tema).HasMaxLength(4096).IsRequired();
                
 
                 entity.HasOne(x => x.CursoNavegacion)
@@ -63,6 +63,20 @@ namespace Capa.AccesoDatos.Context
                 entity.HasOne(x => x.VideoNavegation)
                 .WithOne(x => x.ClaseNavegation);
 
+                entity.HasData(
+                    new Clase { ClaseId = 1, CursoId = 1, Descripcion = "Introduccion a la programacion orientada a objetos", Tema = "La programación orientada a objetos es una evolución de la programación procedural basada en funciones. La POO nos permite agrupar secciones de código con funcionalidades comunes. " +
+                    "Una de las principales desventajas de la programación procedural basada en funciones es su construcción, cuando una aplicación bajo este tipo de programación crece, la modificación del código se hace muy trabajosa y difícil debido a que el cambio de una sola línea en una función," +
+                    " puede acarrear la modificación de muchas otras líneas de código pertenecientes a otras funciones que estén relacionadas. Con la programación orientada a objetos se pretende agrupar el código encapsulándolo y haciéndolo independiente, de manera que una modificación debida al crecimiento de la aplicación solo afecte a unas pocas líneas."
+                    },
+                    new Clase { ClaseId = 2, CursoId = 1, Descripcion = "Manejo de excepciones.", Tema = "Las características de control de excepciones del lenguaje C# le ayudan a afrontar cualquier situación inesperada o excepcional que se produce cuando se ejecuta un programa. El control de excepciones usa las palabras clave try, catch y finally para intentar realizar acciones que pueden no completarse correctamente, para controlar errores cuando decide que es razonable hacerlo y para limpiar recursos más adelante." },
+                    new Clase { ClaseId = 3, CursoId = 1, Descripcion = "Estructuras de datos: Grafos.", Tema = "En matemáticas y ciencias de la computación, un grafo es un conjunto de objetos llamados vértices o nodos unidos por enlaces llamados aristas o arcos, que permiten representar relaciones binarias entre elementos de un conjunto. Son objeto de estudio de la teoría de grafos. Típicamente, un grafo se representa gráficamente como un conjunto de puntos(vértices o nodos) unidos por líneas(aristas)." },
+                    new Clase { ClaseId = 4, CursoId = 2, Descripcion = "El verbo to be", Tema = "En inglés, así como en cualquier idioma, los verbos cumplen una función muy importante dentro del proceso de comunicación: éstos son los encargados de expresar las acciones. Hay un verbo en inglés que es esencial para comunicarse, y por supuesto el más usado de todos los que existen. Éste es el verbo to be." },
+                    new Clase { ClaseId = 5, CursoId = 2, Descripcion = "El present simple", Tema = " En inglés, el presente simple también denominado presente indefinido  es el tiempo verbal presente (de aspecto no perfecto). Es uno de los tiempos verbales del presente utilizados en inglés, además del presente progresivo, el presente perfecto y el presente perfecto progresivo.Se utiliza para hablar de cosas, hábitos diarios o actividades que suelen hacerse todos los días y siempre son verdad." },
+                    new Clase { ClaseId = 6, CursoId = 2, Descripcion = "El present continuous", Tema = "El presente continuo o presente progresivo, es uno de los tiempos verbales del presente usados en el inglés, los otros son el presente simple y presente perfecto. Todos ellos pueden ser usados tanto en el modo indicativo como en el subjuntivo." },
+                    new Clase { ClaseId = 7, CursoId = 3, Descripcion = "Campo electrico", Tema = "Un campo eléctrico es un campo de fuerza creado por la atracción y repulsión de cargas eléctricas (la causa del flujo eléctrico) y se mide en Voltios por metro (V/m). El flujo decrece con la distancia a la fuente que provoca el campo." },
+                    new Clase { ClaseId = 8, CursoId = 3, Descripcion = "Campo magnetico", Tema = "Un campo magnético es una descripción matemática de la influencia magnética de las corrientes eléctricas y de los materiales magnéticos.​ El campo magnético en cualquier punto está especificado por dos valores, la dirección y la magnitud; de tal forma que es un campo vectorial." },
+                    new Clase { ClaseId = 9, CursoId = 3, Descripcion = "Ecuaciones de Maxwell", Tema = "Las ecuaciones de Maxwell representan una de las formas mas elegantes y concisas de establecer los fundamentos de la Electricidad y el Magnetismo. A partir de ellas, se pueden desarrollar la mayoría de las fórmulas de trabajo en el campo. Debido a su breve declaración, encierran un alto nivel de sofisticación matemática y por tanto no se introducen generalmente en el tratamiento inicial de la materia, excepto tal vez como un resúmen de fórmulas." });
+
 
             });
 
@@ -71,7 +85,7 @@ namespace Capa.AccesoDatos.Context
             {
                 entity.HasKey(x => x.ComentarioId);
 
-                entity.Property(x => x.Texto).HasMaxLength(250).IsRequired();
+                entity.Property(x => x.Texto).HasMaxLength(4096).IsRequired();
 
                 entity.HasOne(x => x.ForoNavegation)
                 .WithMany(x => x.ComentariosNavegation)
@@ -83,7 +97,7 @@ namespace Capa.AccesoDatos.Context
             {
                 entity.HasKey(x => x.CursoId);
 
-                entity.Property(x => x.Descripcion).HasMaxLength(250).IsRequired();
+                entity.Property(x => x.Descripcion).HasMaxLength(4096).IsRequired();
                 entity.Property(x => x.Nombre).HasMaxLength(50).IsRequired();
                 entity.Property(x => x.ProfesorId).HasMaxLength(250).IsRequired();
                 entity.Property(x => x.Imagen).HasMaxLength(250).IsRequired();
@@ -92,6 +106,18 @@ namespace Capa.AccesoDatos.Context
                 .WithMany(x => x.CursoNavegacion)
                 .HasForeignKey(x => x.CategoriaId);
 
+                entity.HasData(
+                    new Curso { Cantidad = 40, CategoriaId = 1, CursoId = 1, Descripcion = " Introducir a los estudiantes al paradigma de la programacion orientada a objetos para que puedan utilizar dicho paradigma en la realizacion de programas. Los estudiantes" +
+                    "recibiran una introduccion a los conceptos de TAD, recursion, manejos de excepciones y estructuras de datos compuestas.", Imagen = "", Nombre = "Algoritmos y programacion.", ProfesorId = 1 },
+                    new Curso { Cantidad = 40, CategoriaId = 2, CursoId = 2, Descripcion = "Que los alumnos puedan familiarizarse con los patrones retóricos principales de la lengua inglesa en los usos y contextos de la comunicación académica,teniendo en cuenta el objetivo" +
+                    " / complejidad / especificidad de cada situación comunicativa y la demanda de los interlocutores.", Imagen = "", Nombre = "Ingles aplicado", ProfesorId = 2 },
+                    new Curso { Cantidad = 40, CategoriaId = 3, CursoId = 3, Descripcion = "Favorecer la comprensión de los conceptos generales y específicos de electricidad, magnetismo y fenómenos ópticos. Incentivar el análisis de los fenómenos físicos en su aplicación al campo de la ingeniería.",
+                    Imagen = "", Nombre = "Fisica II", ProfesorId = 3},
+                    new Curso { Cantidad = 40, CategoriaId = 1, CursoId = 4, Descripcion = "el estudiante tendrá los conocimientos de técnicas y herramientas que le permitan realizar software modular, reusable y extensible.Las técnicas mencionadas incluyen conocimientos teóricos y prácticos, habilidades,experiencias y sentido crítico, " +
+                    "todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.", Imagen = "", Nombre = "Metodologias de progrmacion I", ProfesorId = 4},
+                    new Curso { Cantidad = 40, CategoriaId = 2, CursoId = 5, Descripcion = "A lo largo de este curso gratuito, aprenderás vocabulario extenso de chino mandarín, para describir personas y objetos, realizar comparaciones y exponer sus propias perspectivas utilizando estructuras de oraciones complejas y variadas. " +
+                    "El objetivo principal de este curso es que aprendas a hablar un nivel intermedio del idioma y para ello estudiarás los tonos y la entonación con prácticas diseñadas,y aprenderás a construir diálogos en un entorno empresarial.", Imagen = "", Nombre = "Chino Mandarin", ProfesorId = 5 });
+
             });
 
             modelBuilder.Entity<Foro>(entity =>
@@ -99,6 +125,17 @@ namespace Capa.AccesoDatos.Context
                 entity.HasKey(x => x.ForoId);
 
                 entity.Property(x => x.Texto).HasMaxLength(250).IsRequired();
+
+                entity.HasData(
+                    new Foro { ForoId = 1, ClaseId = 1, Texto = "Foro de consulta, clase POO." },
+                    new Foro { ForoId = 2, ClaseId = 2, Texto = "Foro de consulta, clase manejo de excepciones." },
+                    new Foro { ForoId = 3, ClaseId = 3, Texto = "Foro de consulta, clase grafos." },
+                    new Foro { ForoId = 4, ClaseId = 4, Texto = "Foro de consulta, clase verbo to be." },
+                    new Foro { ForoId = 5, ClaseId = 5, Texto = "Foro de consulta, clase present simple." },
+                    new Foro { ForoId = 6, ClaseId = 6, Texto = "Foro de consulta, clase present continuous." },
+                    new Foro { ForoId = 7, ClaseId = 7, Texto = "Foro de consulta, clase campo electrico." },
+                    new Foro { ForoId = 8, ClaseId = 8, Texto = "Foro de consulta, clase campo magnetico." },
+                    new Foro { ForoId = 9, ClaseId = 9, Texto = "Foro de consulta, clase ecuaciones de Maxwell." });
             });
 
 
@@ -108,6 +145,17 @@ namespace Capa.AccesoDatos.Context
 
                 entity.Property(x => x.Descripcion).HasMaxLength(250).IsRequired();
                 entity.Property(x => x.Link).HasMaxLength(100).IsRequired();
+
+                entity.HasData(
+                    new Video { ClaseId = 1, Descripcion = "Video de introduccion a la POO", Link = "https://www.youtube.com/embed/iliKayKaGtc", VideoId = 1 },
+                    new Video { ClaseId = 2, Descripcion = "Video de manejo de excepciones", Link = "https://www.youtube.com/embed/sNTowPB4YHI", VideoId = 2 },
+                    new Video { ClaseId = 3, Descripcion = "Video estructuras de datos grafos", Link = "https://www.youtube.com/embed/hoE38ao9m7c", VideoId = 3 },
+                    new Video { ClaseId = 4, Descripcion = "Video introduccion al verbo to be", Link = "https://www.youtube.com/embed/dFJvNYdKGrA", VideoId = 4 },
+                    new Video { ClaseId = 5, Descripcion = "El present simple", Link = "https://www.youtube.com/embed/m0kTGL6Flzg", VideoId = 5 },
+                    new Video { ClaseId = 6, Descripcion = "El present continuous", Link = "https://www.youtube.com/embed/H7uJ2Pqu21U", VideoId = 6 },
+                    new Video { ClaseId = 7, Descripcion = "Video campo electrico", Link = "https://www.youtube.com/embed/OT5U17c6DSk", VideoId = 7 },
+                    new Video { ClaseId = 8, Descripcion = "Video introduccion al campo magnetico", Link = "https://www.youtube.com/embed/MZVKEZsUVpo", VideoId = 8 },
+                    new Video { ClaseId = 9, Descripcion = "Ecuaciones de maxwell", Link = "https://www.youtube.com/embed/pTWhwzqTXtY", VideoId = 9 });
             });
         }
     }
