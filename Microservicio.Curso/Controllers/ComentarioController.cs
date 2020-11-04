@@ -35,5 +35,19 @@ namespace Microservicio.Curso.Controllers
         }
 
 
+        [HttpGet("GetByForoId")]
+        public IActionResult GetBYForoId(int ForoId)
+        {
+            try
+            {
+                return new JsonResult(service.GetBYForoId(ForoId)) { StatusCode = 200 };
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+
     }
 }

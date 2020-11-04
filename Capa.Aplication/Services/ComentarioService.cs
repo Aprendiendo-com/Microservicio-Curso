@@ -6,6 +6,7 @@ using Capa.Domain.Queries;
 using Capa.Domain.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Capa.Aplication.Services
@@ -40,6 +41,24 @@ namespace Capa.Aplication.Services
 
             return comentarioRespuesta;
 
+        }
+
+
+
+        public List<ComentarioTextoDTO> GetBYForoId(int ForoId)
+        {
+            var lista_comentarios = new List<ComentarioTextoDTO>();
+            var comentarios = repository.Traer<Comentario>().Where(x => x.ForoId == ForoId).ToList();
+            foreach (var comentario in comentarios)
+            {
+                var comentario_response = new ComentarioTextoDTO
+                {
+                    ComentarioId = comentario.ComentarioId,
+                    Texto = comentario.Texto
+                };
+                lista_comentarios.Add(comentario_response);
+            }
+            return lista_comentarios;
         }
     }
 }

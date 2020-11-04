@@ -10,6 +10,7 @@ namespace Capa.Domain.Services
     public interface IComentarioService : IService
     {
         ComentarioResponseDTO AddComentario(ComentarioDTO comentarioDTO);
+        List<ComentarioTextoDTO> GetBYForoId(int ForoId);
 
     }
 }
