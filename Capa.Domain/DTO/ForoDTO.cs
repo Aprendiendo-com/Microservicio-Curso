@@ -6,6 +6,7 @@ namespace Capa.Domain.DTO
 {
     public class ForoDTO
     {
+        public int ForoId { get; set; }
         public string Texto { get; set; }
     }
 }

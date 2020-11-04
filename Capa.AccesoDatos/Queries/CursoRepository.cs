@@ -45,6 +45,7 @@ namespace Capa.AccesoDatos.Queries
 
             var foroDTO = new ForoDTO()
             {
+                ForoId = foro.ForoId,
                 Texto = foro.Texto
             };
             claseDTO.Foro = foroDTO;
