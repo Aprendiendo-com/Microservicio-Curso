@@ -35,6 +35,9 @@ namespace Microservicio.Curso.Controllers
             }
         }
 
+
+
+
         [HttpGet("GetByForoId")]
         public IActionResult GetBYForoId(int ForoId)
         {
