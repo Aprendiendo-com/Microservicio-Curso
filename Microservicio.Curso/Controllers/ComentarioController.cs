@@ -21,6 +21,7 @@ namespace Microservicio.Curso.Controllers
             service = services;
         }
 
+
         [HttpPost]
         public IActionResult AddComentario(ComentarioDTO comentarioDTO)
         {
@@ -31,6 +32,22 @@ namespace Microservicio.Curso.Controllers
             catch (Exception e)
             {
                 return BadRequest(e);
+            }
+        }
+
+
+
+
+        [HttpGet("GetByForoId")]
+        public IActionResult GetBYForoId(int ForoId)
+        {
+            try
+            {
+                return new JsonResult(service.GetBYForoId(ForoId)) { StatusCode = 200 };
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
             }
         }
 
