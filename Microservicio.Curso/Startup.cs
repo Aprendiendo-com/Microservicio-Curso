@@ -54,6 +54,9 @@ namespace Microservicio.Curso
             services.AddScoped<IClaseRepository, ClaseRepository>();
             services.AddScoped<IClaseService, ClaseService>();
 
+            services.AddScoped<IComentarioRepository, ComentarioRepository>();
+            services.AddScoped<IComentarioService, ComentarioService>();
+
             services.AddControllers();
         }
 
