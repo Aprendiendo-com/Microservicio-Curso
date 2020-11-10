@@ -20,7 +20,9 @@ namespace Capa.Domain.Services
 
 
 
-        List<CursoResponseDTO> GetAll();
+        List<CursoCustomDTO> GetAll();
+
+        List<CategoriaDTOs> ObtenerCategorias();
 
     }
 }

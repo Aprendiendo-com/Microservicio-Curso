@@ -75,5 +75,19 @@ namespace Microservicio.Curso.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        //[HttpGet("ObtenerCategorias")]
+
+        //public IActionResult ObtenerCategorias()
+        //{
+        //    try
+        //    {
+        //        return new JsonResult(service.ObtenerCategorias()) { StatusCode = 200 };
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
     }
 }
