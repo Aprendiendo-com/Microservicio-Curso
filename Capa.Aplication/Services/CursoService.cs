@@ -134,26 +134,14 @@ namespace Capa.Aplication.Services
 
 
 
-        public List<CursoResponseDTO> GetAll()
+        public List<CursoCustomDTO> GetAll()
         {
-            var lista_cursos = new List<CursoResponseDTO>();
-            var cursos = repository.Traer<Curso>().ToList();
-            foreach(var curso in cursos)
-            {
-                var curso_response = new CursoResponseDTO
-                {
-                    CursoId = curso.CursoId,
-                    Nombre = curso.Nombre,
-                    Descripcion = curso.Descripcion,
-                    Cantidad = curso.Cantidad,
-                    ProfesorId = curso.ProfesorId,
-                    CategoriaId = curso.CategoriaId,
-                    Imagen = curso.Imagen
-                };
-                lista_cursos.Add(curso_response);
-            }
-            return lista_cursos;
+            return this.repository.GetCursosConCategoria();
         }
 
+        public List<CategoriaDTOs> ObtenerCategorias()
+        {
+            return this.repository.ObtenerCategorias();
+        }
     }
 }

@@ -108,15 +108,15 @@ namespace Capa.AccesoDatos.Context
 
                 entity.HasData(
                     new Curso { Cantidad = 40, CategoriaId = 1, CursoId = 1, Descripcion = " Introducir a los estudiantes al paradigma de la programacion orientada a objetos para que puedan utilizar dicho paradigma en la realizacion de programas. Los estudiantes" +
-                    "recibiran una introduccion a los conceptos de TAD, recursion, manejos de excepciones y estructuras de datos compuestas.", Imagen = "", Nombre = "Algoritmos y programacion.", ProfesorId = 1 },
+                    "recibiran una introduccion a los conceptos de TAD, recursion, manejos de excepciones y estructuras de datos compuestas.", Imagen = "https://blogthinkbig.com/wp-content/uploads/sites/4/2015/07/shutterstock_148972376.jpg?resize=610%2C407", Nombre = "Algoritmos y programacion.", ProfesorId = 1 },
                     new Curso { Cantidad = 40, CategoriaId = 2, CursoId = 2, Descripcion = "Que los alumnos puedan familiarizarse con los patrones retóricos principales de la lengua inglesa en los usos y contextos de la comunicación académica,teniendo en cuenta el objetivo" +
-                    " / complejidad / especificidad de cada situación comunicativa y la demanda de los interlocutores.", Imagen = "", Nombre = "Ingles aplicado", ProfesorId = 2 },
+                    " / complejidad / especificidad de cada situación comunicativa y la demanda de los interlocutores.", Imagen = "https://www.altagracianoticias.com/wp-content/uploads/2019/06/ingles.jpg", Nombre = "Ingles aplicado", ProfesorId = 2 },
                     new Curso { Cantidad = 40, CategoriaId = 3, CursoId = 3, Descripcion = "Favorecer la comprensión de los conceptos generales y específicos de electricidad, magnetismo y fenómenos ópticos. Incentivar el análisis de los fenómenos físicos en su aplicación al campo de la ingeniería.",
-                    Imagen = "", Nombre = "Fisica II", ProfesorId = 3},
+                    Imagen = "https://img.freepik.com/vector-gratis/pizarra-fondo-formulas-fisica-ciencia_97886-4558.jpg?size=626&ext=jpg", Nombre = "Fisica II", ProfesorId = 3},
                     new Curso { Cantidad = 40, CategoriaId = 1, CursoId = 4, Descripcion = "el estudiante tendrá los conocimientos de técnicas y herramientas que le permitan realizar software modular, reusable y extensible.Las técnicas mencionadas incluyen conocimientos teóricos y prácticos, habilidades,experiencias y sentido crítico, " +
-                    "todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.", Imagen = "", Nombre = "Metodologias de progrmacion I", ProfesorId = 4},
+                    "todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.", Imagen = "https://www.ingestructurada.com/Images/Diagram2.jpg", Nombre = "Metodologias de programacion I", ProfesorId = 4},
                     new Curso { Cantidad = 40, CategoriaId = 2, CursoId = 5, Descripcion = "A lo largo de este curso gratuito, aprenderás vocabulario extenso de chino mandarín, para describir personas y objetos, realizar comparaciones y exponer sus propias perspectivas utilizando estructuras de oraciones complejas y variadas. " +
-                    "El objetivo principal de este curso es que aprendas a hablar un nivel intermedio del idioma y para ello estudiarás los tonos y la entonación con prácticas diseñadas,y aprenderás a construir diálogos en un entorno empresarial.", Imagen = "", Nombre = "Chino Mandarin", ProfesorId = 5 });
+                    "El objetivo principal de este curso es que aprendas a hablar un nivel intermedio del idioma y para ello estudiarás los tonos y la entonación con prácticas diseñadas,y aprenderás a construir diálogos en un entorno empresarial.", Imagen = "https://www.ubo.cl/wp-content/uploads/chino_mandarin.jpg", Nombre = "Chino Mandarin", ProfesorId = 5 });
 
             });
 

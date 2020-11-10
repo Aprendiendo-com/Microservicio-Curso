@@ -52,6 +52,55 @@ namespace Capa.AccesoDatos.Queries
             return claseDTO;
         }
 
+        public List<CursoCustomDTO> GetCursosConCategoria()
+        {
+            var cursos = this.Context.Cursos.ToList();
+            var categoria = this.Context.Categorias.ToList();
 
+            var query = from c in cursos
+                        join cate in categoria on c.CategoriaId equals cate.CategoriaId
+                        select new { curso = c.CursoId, nombre = c.Nombre, descripcion = c.Descripcion, cantidad = c.Cantidad, imagen = c.Imagen,
+                        categoria = cate.Descripcion, profesor = c.ProfesorId.ToString()};
+
+            var listCursos = new List<CursoCustomDTO>();
+
+            foreach (var elem in query)
+            {
+                var curso = new CursoCustomDTO()
+                {
+                    CursoId = elem.curso,
+                    Nombre = elem.nombre,
+                    Descripcion = elem.descripcion,
+                    Cantidad = elem.cantidad,
+                    Profesor = elem.profesor,
+                    Categoria = elem.categoria,
+                    Imagen = elem.imagen
+
+                };
+
+                listCursos.Add(curso);
+            }
+
+            return listCursos;
+        }
+
+        public List<CategoriaDTOs> ObtenerCategorias()
+        {
+            var categoria = this.context.Categorias.ToList();
+
+            var list = new List<CategoriaDTOs>();
+
+            foreach (var c in categoria)
+            {
+                var cate = new CategoriaDTOs()
+                {
+                    Descripcion = c.Descripcion
+                };
+
+                list.Add(cate);
+            }
+
+            return list;
+        }
     }
 }
