@@ -143,5 +143,25 @@ namespace Capa.Aplication.Services
         {
             return this.repository.ObtenerCategorias();
         }
+
+        public List<CursoSimpleDTO> CursoSimple()
+        {
+            var cursoDb = this.repository.Traer<Curso>();
+
+            var ListCursos = new List<CursoSimpleDTO>();
+
+            foreach (var c in cursoDb)
+            {
+                var dto = new CursoSimpleDTO()
+                {
+                    CursoId = c.CursoId,
+                    ProfesorId = c.ProfesorId
+                };
+
+                ListCursos.Add(dto);
+            }
+
+            return ListCursos;
+        }
     }
 }
