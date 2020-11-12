@@ -86,6 +86,9 @@ namespace Capa.AccesoDatos.Context
                 entity.HasKey(x => x.ComentarioId);
 
                 entity.Property(x => x.Texto).HasMaxLength(4096).IsRequired();
+                entity.Property(x => x.Nombre).HasMaxLength(50).IsRequired();
+                entity.Property(x => x.Apellido).HasMaxLength(50).IsRequired();
+
 
                 entity.HasOne(x => x.ForoNavegation)
                 .WithMany(x => x.ComentariosNavegation)

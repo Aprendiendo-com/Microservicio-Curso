@@ -8,5 +8,8 @@ namespace Capa.Domain.DTO.ComentarioDTOs
     {
         public int ComentarioId { get; set; }
         public string Texto { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+
     }
 }
