@@ -24,5 +24,7 @@ namespace Capa.Domain.Services
 
         List<CategoriaDTOs> ObtenerCategorias();
 
+        List<CursoSimpleDTO> CursoSimple();
+
     }
 }

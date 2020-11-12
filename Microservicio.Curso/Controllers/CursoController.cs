@@ -76,6 +76,20 @@ namespace Microservicio.Curso.Controllers
             }
         }
 
+        [HttpGet]
+
+        public IActionResult CursosSimple()
+        {
+            try
+            {
+                return new JsonResult(service.CursoSimple()) { StatusCode = 200 };
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         //[HttpGet("ObtenerCategorias")]
 
         //public IActionResult ObtenerCategorias()
