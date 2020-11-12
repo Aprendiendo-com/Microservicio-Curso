@@ -2,7 +2,7 @@
 
 namespace Capa.AccesoDatos.Migrations
 {
-    public partial class createmigration : Migration
+    public partial class Migrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -112,7 +112,9 @@ namespace Capa.AccesoDatos.Migrations
                     ComentarioId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Texto = table.Column<string>(maxLength: 4096, nullable: false),
-                    ForoId = table.Column<int>(nullable: false)
+                    ForoId = table.Column<int>(nullable: false),
+                    Nombre = table.Column<string>(maxLength: 50, nullable: false),
+                    Apellido = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -145,11 +147,11 @@ namespace Capa.AccesoDatos.Migrations
                 columns: new[] { "CursoId", "Cantidad", "CategoriaId", "Descripcion", "Imagen", "Nombre", "ProfesorId" },
                 values: new object[,]
                 {
-                    { 1, 40, 1, " Introducir a los estudiantes al paradigma de la programacion orientada a objetos para que puedan utilizar dicho paradigma en la realizacion de programas. Los estudiantesrecibiran una introduccion a los conceptos de TAD, recursion, manejos de excepciones y estructuras de datos compuestas.", "", "Algoritmos y programacion.", 1 },
-                    { 4, 40, 1, "el estudiante tendrá los conocimientos de técnicas y herramientas que le permitan realizar software modular, reusable y extensible.Las técnicas mencionadas incluyen conocimientos teóricos y prácticos, habilidades,experiencias y sentido crítico, todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.", "", "Metodologias de progrmacion I", 4 },
-                    { 2, 40, 2, "Que los alumnos puedan familiarizarse con los patrones retóricos principales de la lengua inglesa en los usos y contextos de la comunicación académica,teniendo en cuenta el objetivo / complejidad / especificidad de cada situación comunicativa y la demanda de los interlocutores.", "", "Ingles aplicado", 2 },
-                    { 5, 40, 2, "A lo largo de este curso gratuito, aprenderás vocabulario extenso de chino mandarín, para describir personas y objetos, realizar comparaciones y exponer sus propias perspectivas utilizando estructuras de oraciones complejas y variadas. El objetivo principal de este curso es que aprendas a hablar un nivel intermedio del idioma y para ello estudiarás los tonos y la entonación con prácticas diseñadas,y aprenderás a construir diálogos en un entorno empresarial.", "", "Chino Mandarin", 5 },
-                    { 3, 40, 3, "Favorecer la comprensión de los conceptos generales y específicos de electricidad, magnetismo y fenómenos ópticos. Incentivar el análisis de los fenómenos físicos en su aplicación al campo de la ingeniería.", "", "Fisica II", 3 }
+                    { 1, 40, 1, " Introducir a los estudiantes al paradigma de la programacion orientada a objetos para que puedan utilizar dicho paradigma en la realizacion de programas. Los estudiantesrecibiran una introduccion a los conceptos de TAD, recursion, manejos de excepciones y estructuras de datos compuestas.", "https://blogthinkbig.com/wp-content/uploads/sites/4/2015/07/shutterstock_148972376.jpg?resize=610%2C407", "Algoritmos y programacion.", 1 },
+                    { 4, 40, 1, "el estudiante tendrá los conocimientos de técnicas y herramientas que le permitan realizar software modular, reusable y extensible.Las técnicas mencionadas incluyen conocimientos teóricos y prácticos, habilidades,experiencias y sentido crítico, todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.", "https://www.ingestructurada.com/Images/Diagram2.jpg", "Metodologias de programacion I", 4 },
+                    { 2, 40, 2, "Que los alumnos puedan familiarizarse con los patrones retóricos principales de la lengua inglesa en los usos y contextos de la comunicación académica,teniendo en cuenta el objetivo / complejidad / especificidad de cada situación comunicativa y la demanda de los interlocutores.", "https://www.altagracianoticias.com/wp-content/uploads/2019/06/ingles.jpg", "Ingles aplicado", 2 },
+                    { 5, 40, 2, "A lo largo de este curso gratuito, aprenderás vocabulario extenso de chino mandarín, para describir personas y objetos, realizar comparaciones y exponer sus propias perspectivas utilizando estructuras de oraciones complejas y variadas. El objetivo principal de este curso es que aprendas a hablar un nivel intermedio del idioma y para ello estudiarás los tonos y la entonación con prácticas diseñadas,y aprenderás a construir diálogos en un entorno empresarial.", "https://www.ubo.cl/wp-content/uploads/chino_mandarin.jpg", "Chino Mandarin", 5 },
+                    { 3, 40, 3, "Favorecer la comprensión de los conceptos generales y específicos de electricidad, magnetismo y fenómenos ópticos. Incentivar el análisis de los fenómenos físicos en su aplicación al campo de la ingeniería.", "https://img.freepik.com/vector-gratis/pizarra-fondo-formulas-fisica-ciencia_97886-4558.jpg?size=626&ext=jpg", "Fisica II", 3 }
                 });
 
             migrationBuilder.InsertData(

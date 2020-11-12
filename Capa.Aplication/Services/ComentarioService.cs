@@ -26,6 +26,8 @@ namespace Capa.Aplication.Services
         {
             var comentario = new Comentario()
             {
+                Nombre = comentarioDTO.Nombre,
+                Apellido = comentarioDTO.Apellido,
                 Texto = comentarioDTO.Texto,
                 ForoId = comentarioDTO.ForoId
             };
@@ -40,7 +42,6 @@ namespace Capa.Aplication.Services
             };
 
             return comentarioRespuesta;
-
         }
 
 
@@ -54,7 +55,9 @@ namespace Capa.Aplication.Services
                 var comentario_response = new ComentarioTextoDTO
                 {
                     ComentarioId = comentario.ComentarioId,
-                    Texto = comentario.Texto
+                    Texto = comentario.Texto,
+                    Nombre = comentario.Nombre,
+                    Apellido = comentario.Apellido
                 };
                 lista_comentarios.Add(comentario_response);
             }
