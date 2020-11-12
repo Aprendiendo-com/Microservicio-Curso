@@ -110,6 +110,7 @@ namespace Capa.Aplication.Services
                 curso = repository.Traer<Curso>().FirstOrDefault(x => x.CursoId == idCurso);
                 cursoCompleto = new CursoCompletoDTO()
                 {
+                    CursoId = curso.CursoId,
                     Nombre = curso.Nombre,
                     Descripcion = curso.Descripcion,
                     Cantidad = curso.Cantidad,

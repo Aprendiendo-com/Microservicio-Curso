@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Capa.AccesoDatos.Migrations
 {
     [DbContext(typeof(GenericContext))]
-    [Migration("20201103065308_create-migration")]
-    partial class createmigration
+    [Migration("20201111163330_Migrations")]
+    partial class Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -153,8 +153,18 @@ namespace Capa.AccesoDatos.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Apellido")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
                     b.Property<int>("ForoId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Texto")
                         .IsRequired()
@@ -213,7 +223,7 @@ namespace Capa.AccesoDatos.Migrations
                             Cantidad = 40,
                             CategoriaId = 1,
                             Descripcion = " Introducir a los estudiantes al paradigma de la programacion orientada a objetos para que puedan utilizar dicho paradigma en la realizacion de programas. Los estudiantesrecibiran una introduccion a los conceptos de TAD, recursion, manejos de excepciones y estructuras de datos compuestas.",
-                            Imagen = "",
+                            Imagen = "https://blogthinkbig.com/wp-content/uploads/sites/4/2015/07/shutterstock_148972376.jpg?resize=610%2C407",
                             Nombre = "Algoritmos y programacion.",
                             ProfesorId = 1
                         },
@@ -223,7 +233,7 @@ namespace Capa.AccesoDatos.Migrations
                             Cantidad = 40,
                             CategoriaId = 2,
                             Descripcion = "Que los alumnos puedan familiarizarse con los patrones retóricos principales de la lengua inglesa en los usos y contextos de la comunicación académica,teniendo en cuenta el objetivo / complejidad / especificidad de cada situación comunicativa y la demanda de los interlocutores.",
-                            Imagen = "",
+                            Imagen = "https://www.altagracianoticias.com/wp-content/uploads/2019/06/ingles.jpg",
                             Nombre = "Ingles aplicado",
                             ProfesorId = 2
                         },
@@ -233,7 +243,7 @@ namespace Capa.AccesoDatos.Migrations
                             Cantidad = 40,
                             CategoriaId = 3,
                             Descripcion = "Favorecer la comprensión de los conceptos generales y específicos de electricidad, magnetismo y fenómenos ópticos. Incentivar el análisis de los fenómenos físicos en su aplicación al campo de la ingeniería.",
-                            Imagen = "",
+                            Imagen = "https://img.freepik.com/vector-gratis/pizarra-fondo-formulas-fisica-ciencia_97886-4558.jpg?size=626&ext=jpg",
                             Nombre = "Fisica II",
                             ProfesorId = 3
                         },
@@ -243,8 +253,8 @@ namespace Capa.AccesoDatos.Migrations
                             Cantidad = 40,
                             CategoriaId = 1,
                             Descripcion = "el estudiante tendrá los conocimientos de técnicas y herramientas que le permitan realizar software modular, reusable y extensible.Las técnicas mencionadas incluyen conocimientos teóricos y prácticos, habilidades,experiencias y sentido crítico, todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.",
-                            Imagen = "",
-                            Nombre = "Metodologias de progrmacion I",
+                            Imagen = "https://www.ingestructurada.com/Images/Diagram2.jpg",
+                            Nombre = "Metodologias de programacion I",
                             ProfesorId = 4
                         },
                         new
@@ -253,7 +263,7 @@ namespace Capa.AccesoDatos.Migrations
                             Cantidad = 40,
                             CategoriaId = 2,
                             Descripcion = "A lo largo de este curso gratuito, aprenderás vocabulario extenso de chino mandarín, para describir personas y objetos, realizar comparaciones y exponer sus propias perspectivas utilizando estructuras de oraciones complejas y variadas. El objetivo principal de este curso es que aprendas a hablar un nivel intermedio del idioma y para ello estudiarás los tonos y la entonación con prácticas diseñadas,y aprenderás a construir diálogos en un entorno empresarial.",
-                            Imagen = "",
+                            Imagen = "https://www.ubo.cl/wp-content/uploads/chino_mandarin.jpg",
                             Nombre = "Chino Mandarin",
                             ProfesorId = 5
                         });
