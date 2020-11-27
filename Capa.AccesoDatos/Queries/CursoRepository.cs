@@ -66,6 +66,18 @@ namespace Capa.AccesoDatos.Queries
 
             foreach (var elem in query)
             {
+                string link;
+                var clase = Context.Clases.ToList().FirstOrDefault(x => x.CursoId == elem.curso);
+                if (clase != null)
+                {
+                    link = Context.Videos.ToList().FirstOrDefault(x => x.ClaseId == clase.ClaseId).Link;
+
+                }
+                else
+                {
+                    link = "";
+                }
+
                 var curso = new CursoCustomDTO()
                 {
                     CursoId = elem.curso,
@@ -74,8 +86,8 @@ namespace Capa.AccesoDatos.Queries
                     Cantidad = elem.cantidad,
                     Profesor = elem.profesor,
                     Categoria = elem.categoria,
-                    Imagen = elem.imagen
-
+                    Imagen = elem.imagen,
+                    link_intro = link
                 };
 
                 listCursos.Add(curso);

@@ -13,5 +13,6 @@ namespace Capa.Domain.DTO
         public string Profesor { get; set; }
         public string Categoria { get; set; }
         public string Imagen { get; set; }
+        public string link_intro { get; set; }
     }
 }
