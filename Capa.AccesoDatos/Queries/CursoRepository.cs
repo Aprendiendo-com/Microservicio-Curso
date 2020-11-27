@@ -71,7 +71,6 @@ namespace Capa.AccesoDatos.Queries
                 if (clase != null)
                 {
                     link = Context.Videos.ToList().FirstOrDefault(x => x.ClaseId == clase.ClaseId).Link;
-
                 }
                 else
                 {
