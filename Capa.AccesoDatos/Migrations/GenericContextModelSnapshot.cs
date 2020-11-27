@@ -141,6 +141,20 @@ namespace Capa.AccesoDatos.Migrations
                             CursoId = 3,
                             Descripcion = "Ecuaciones de Maxwell",
                             Tema = "Las ecuaciones de Maxwell representan una de las formas mas elegantes y concisas de establecer los fundamentos de la Electricidad y el Magnetismo. A partir de ellas, se pueden desarrollar la mayoría de las fórmulas de trabajo en el campo. Debido a su breve declaración, encierran un alto nivel de sofisticación matemática y por tanto no se introducen generalmente en el tratamiento inicial de la materia, excepto tal vez como un resúmen de fórmulas."
+                        },
+                        new
+                        {
+                            ClaseId = 10,
+                            CursoId = 4,
+                            Descripcion = "Patrones de diseño",
+                            Tema = "En esta primera clase se presenta una definición de lo que son los patrones de diseño, así como explicar en qué momentos podría ser necesario utilizarlos"
+                        },
+                        new
+                        {
+                            ClaseId = 11,
+                            CursoId = 5,
+                            Descripcion = "Introduccion a Chino Mandarin",
+                            Tema = "El chino mandarín, o simplemente mandarín, es el conjunto de dialectos del chino mutuamente inteligibles que se hablan en el norte, centro y suroeste de China. En este curso se propone a enseñar las bases de este idioma para que posteriormente los estudiantes puedan aprendelo de forma más avanzada."
                         });
                 });
 
@@ -348,6 +362,18 @@ namespace Capa.AccesoDatos.Migrations
                             ForoId = 9,
                             ClaseId = 9,
                             Texto = "Foro de consulta, clase ecuaciones de Maxwell."
+                        },
+                        new
+                        {
+                            ForoId = 10,
+                            ClaseId = 10,
+                            Texto = "Foro de consulta, clase de patrones de diseño."
+                        },
+                        new
+                        {
+                            ForoId = 11,
+                            ClaseId = 11,
+                            Texto = "Foro de consulta, clase de Introducción al Chino Mandarin."
                         });
                 });
 
@@ -441,6 +467,20 @@ namespace Capa.AccesoDatos.Migrations
                             ClaseId = 9,
                             Descripcion = "Ecuaciones de maxwell",
                             Link = "https://www.youtube.com/embed/pTWhwzqTXtY"
+                        },
+                        new
+                        {
+                            VideoId = 10,
+                            ClaseId = 10,
+                            Descripcion = "Patrones de diseño",
+                            Link = "https://www.youtube.com/embed/cwfuydUHZ7o"
+                        },
+                        new
+                        {
+                            VideoId = 11,
+                            ClaseId = 11,
+                            Descripcion = "Chino Mandarín",
+                            Link = "https://www.youtube.com/embed/fTkPECi7tGQ"
                         });
                 });
 

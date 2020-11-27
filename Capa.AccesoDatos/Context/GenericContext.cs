@@ -75,10 +75,13 @@ namespace Capa.AccesoDatos.Context
                     new Clase { ClaseId = 6, CursoId = 2, Descripcion = "El present continuous", Tema = "El presente continuo o presente progresivo, es uno de los tiempos verbales del presente usados en el inglés, los otros son el presente simple y presente perfecto. Todos ellos pueden ser usados tanto en el modo indicativo como en el subjuntivo." },
                     new Clase { ClaseId = 7, CursoId = 3, Descripcion = "Campo electrico", Tema = "Un campo eléctrico es un campo de fuerza creado por la atracción y repulsión de cargas eléctricas (la causa del flujo eléctrico) y se mide en Voltios por metro (V/m). El flujo decrece con la distancia a la fuente que provoca el campo." },
                     new Clase { ClaseId = 8, CursoId = 3, Descripcion = "Campo magnetico", Tema = "Un campo magnético es una descripción matemática de la influencia magnética de las corrientes eléctricas y de los materiales magnéticos.​ El campo magnético en cualquier punto está especificado por dos valores, la dirección y la magnitud; de tal forma que es un campo vectorial." },
-                    new Clase { ClaseId = 9, CursoId = 3, Descripcion = "Ecuaciones de Maxwell", Tema = "Las ecuaciones de Maxwell representan una de las formas mas elegantes y concisas de establecer los fundamentos de la Electricidad y el Magnetismo. A partir de ellas, se pueden desarrollar la mayoría de las fórmulas de trabajo en el campo. Debido a su breve declaración, encierran un alto nivel de sofisticación matemática y por tanto no se introducen generalmente en el tratamiento inicial de la materia, excepto tal vez como un resúmen de fórmulas." });
+                    new Clase { ClaseId = 9, CursoId = 3, Descripcion = "Ecuaciones de Maxwell", Tema = "Las ecuaciones de Maxwell representan una de las formas mas elegantes y concisas de establecer los fundamentos de la Electricidad y el Magnetismo. A partir de ellas, se pueden desarrollar la mayoría de las fórmulas de trabajo en el campo. Debido a su breve declaración, encierran un alto nivel de sofisticación matemática y por tanto no se introducen generalmente en el tratamiento inicial de la materia, excepto tal vez como un resúmen de fórmulas." },
 
 
-            });
+                    new Clase { ClaseId = 10, CursoId = 4, Descripcion = "Patrones de diseño", Tema = "En esta primera clase se presenta una definición de lo que son los patrones de diseño, así como explicar en qué momentos podría ser necesario utilizarlos" },
+                    new Clase { ClaseId = 11, CursoId = 5, Descripcion = "Introduccion a Chino Mandarin", Tema = "El chino mandarín, o simplemente mandarín, es el conjunto de dialectos del chino mutuamente inteligibles que se hablan en el norte, centro y suroeste de China. En este curso se propone a enseñar las bases de este idioma para que posteriormente los estudiantes puedan aprendelo de forma más avanzada." });
+
+        });
 
 
             modelBuilder.Entity<Comentario>(entity =>
@@ -139,7 +142,11 @@ namespace Capa.AccesoDatos.Context
                     new Foro { ForoId = 6, ClaseId = 6, Texto = "Foro de consulta, clase present continuous." },
                     new Foro { ForoId = 7, ClaseId = 7, Texto = "Foro de consulta, clase campo electrico." },
                     new Foro { ForoId = 8, ClaseId = 8, Texto = "Foro de consulta, clase campo magnetico." },
-                    new Foro { ForoId = 9, ClaseId = 9, Texto = "Foro de consulta, clase ecuaciones de Maxwell." });
+                    new Foro { ForoId = 9, ClaseId = 9, Texto = "Foro de consulta, clase ecuaciones de Maxwell." },
+
+                    new Foro { ForoId = 10, ClaseId = 10, Texto = "Foro de consulta, clase de patrones de diseño." },
+                    new Foro { ForoId = 11, ClaseId = 11, Texto = "Foro de consulta, clase de Introducción al Chino Mandarin." });
+
             });
 
 
@@ -159,7 +166,12 @@ namespace Capa.AccesoDatos.Context
                     new Video { ClaseId = 6, Descripcion = "El present continuous", Link = "https://www.youtube.com/embed/H7uJ2Pqu21U", VideoId = 6 },
                     new Video { ClaseId = 7, Descripcion = "Video campo electrico", Link = "https://www.youtube.com/embed/OT5U17c6DSk", VideoId = 7 },
                     new Video { ClaseId = 8, Descripcion = "Video introduccion al campo magnetico", Link = "https://www.youtube.com/embed/MZVKEZsUVpo", VideoId = 8 },
-                    new Video { ClaseId = 9, Descripcion = "Ecuaciones de maxwell", Link = "https://www.youtube.com/embed/pTWhwzqTXtY", VideoId = 9 });
+                    new Video { ClaseId = 9, Descripcion = "Ecuaciones de maxwell", Link = "https://www.youtube.com/embed/pTWhwzqTXtY", VideoId = 9 },
+
+                    new Video { ClaseId = 10, Descripcion = "Patrones de diseño", Link = "https://www.youtube.com/embed/cwfuydUHZ7o", VideoId = 10 },
+                    new Video { ClaseId = 11, Descripcion = "Chino Mandarín", Link = "https://www.youtube.com/embed/fTkPECi7tGQ", VideoId = 11 });
+
+
             });
         }
     }
