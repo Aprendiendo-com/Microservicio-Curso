@@ -10,6 +10,7 @@ namespace Capa.Domain.DTO.ComentarioDTOs
         public string Apellido { get; set; }
         public string Texto { get; set; }
         public int ForoId { get; set; }
+        public string Rol { get; set; }
 
     }
 }
