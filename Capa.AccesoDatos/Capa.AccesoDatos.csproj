@@ -5,12 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20201103065308_create-migration.cs" />
-    <Compile Remove="Migrations\20201103065308_create-migration.Designer.cs" />
-    <Compile Remove="Migrations\20201110032748_CreateMigration.cs" />
-    <Compile Remove="Migrations\20201110032748_CreateMigration.Designer.cs" />
-    <Compile Remove="Migrations\20201111162231_Migratinos.cs" />
-    <Compile Remove="Migrations\20201111162231_Migratinos.Designer.cs" />
+    <Compile Remove="Migrations\20201127230256_Migrations.cs" />
+    <Compile Remove="Migrations\20201127230256_Migrations.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
