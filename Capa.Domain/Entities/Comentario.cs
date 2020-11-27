@@ -11,6 +11,7 @@ namespace Capa.Domain.Entities
         public int ForoId { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public string Rol { get; set; }
 
         public virtual Foro ForoNavegation { get; set; }
     }

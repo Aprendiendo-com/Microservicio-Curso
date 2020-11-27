@@ -29,7 +29,8 @@ namespace Capa.Aplication.Services
                 Nombre = comentarioDTO.Nombre,
                 Apellido = comentarioDTO.Apellido,
                 Texto = comentarioDTO.Texto,
-                ForoId = comentarioDTO.ForoId
+                ForoId = comentarioDTO.ForoId,
+                Rol = comentarioDTO.Rol
             };
 
 
@@ -57,7 +58,8 @@ namespace Capa.Aplication.Services
                     ComentarioId = comentario.ComentarioId,
                     Texto = comentario.Texto,
                     Nombre = comentario.Nombre,
-                    Apellido = comentario.Apellido
+                    Apellido = comentario.Apellido,
+                    Rol = comentario.Rol
                 };
                 lista_comentarios.Add(comentario_response);
             }

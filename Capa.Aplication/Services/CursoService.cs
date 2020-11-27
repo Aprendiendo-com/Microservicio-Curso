@@ -77,7 +77,10 @@ namespace Capa.Aplication.Services
 
         public async Task<CuestionarioTodoDTO> GetCuestionarioDeClase(int idClase)
         {
-            using (var http = new HttpClient())
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+
+            using (var http = new HttpClient(clientHandler))
             {
                 string link = "https://localhost:44326/api/Cuestionario/GetPorClase?idClase=" + idClase;
                 var Uri = new Uri(link);
