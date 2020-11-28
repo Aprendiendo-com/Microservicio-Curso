@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Capa.Domain.DTO;
 using Capa.Domain.DTO.CuestionarioDTO;
+using Capa.Domain.DTO.CursoResponseDTO;
 using Capa.Domain.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -103,5 +104,17 @@ namespace Microservicio.Curso.Controllers
         //        return BadRequest(ex.Message);
         //    }
         //}
+        [HttpPut("RestarCupoById")]
+        public IActionResult RestarCupoById(RequestIdCursoDTO idCursos)
+        {
+            try
+            {
+                return new JsonResult(service.RestarCupoById(idCursos)) { StatusCode = 200 };
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

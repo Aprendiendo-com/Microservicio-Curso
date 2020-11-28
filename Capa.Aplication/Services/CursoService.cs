@@ -167,5 +167,22 @@ namespace Capa.Aplication.Services
 
             return ListCursos;
         }
+
+
+
+
+        public CursoResponseAsyncDTO RestarCupoById(RequestIdCursoDTO curso_id)
+        {
+            Curso curso = repository.Traer<Curso>().FirstOrDefault(x => x.CursoId == curso_id.CursoId);
+            curso.Cantidad--;
+            this.repository.Update(curso);
+
+            var cursoUpdate = new CursoResponseAsyncDTO()
+            {
+                CursoId = curso.CursoId
+            };
+            return cursoUpdate;
+        }
+
     }
 }

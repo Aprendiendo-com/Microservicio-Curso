@@ -26,5 +26,8 @@ namespace Capa.Domain.Services
 
         List<CursoSimpleDTO> CursoSimple();
 
+
+        CursoResponseAsyncDTO RestarCupoById(RequestIdCursoDTO idCurso);
+
     }
 }
