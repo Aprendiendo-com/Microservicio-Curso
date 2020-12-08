@@ -11,6 +11,6 @@ namespace Capa.Domain.DTO
         public string Tema { get; set; }
         public int CursoId { get; set; }
         public VideoDTO Video { get; set; }
-        public ForoDTO Foro { get; set; }
+        public ForoAgregarDTO Foro { get; set; }
     }
 }
