@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Capa.Domain.DTO
 {
-    public class ForoDTO
+    public class ForoAgregarDTO
     {
-        public int ForoId { get; set; }
         public string Texto { get; set; }
     }
 }
