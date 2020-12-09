@@ -267,7 +267,7 @@ namespace Capa.AccesoDatos.Migrations
                         new
                         {
                             CursoId = 4,
-                            Cantidad = 40,
+                            Cantidad = 4,
                             CategoriaId = 1,
                             Descripcion = "el estudiante tendrá los conocimientos de técnicas y herramientas que le permitan realizar software modular, reusable y extensible.Las técnicas mencionadas incluyen conocimientos teóricos y prácticos, habilidades,experiencias y sentido crítico, todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.",
                             Imagen = "https://www.ingestructurada.com/Images/Diagram2.jpg",
@@ -283,6 +283,16 @@ namespace Capa.AccesoDatos.Migrations
                             Imagen = "https://www.ubo.cl/wp-content/uploads/chino_mandarin.jpg",
                             Nombre = "Chino Mandarin",
                             ProfesorId = 5
+                        },
+                        new
+                        {
+                            CursoId = 6,
+                            Cantidad = 4,
+                            CategoriaId = 3,
+                            Descripcion = "En este curso de Química General, aprenderemos los conceptos fundamentales de la “Ciencia Química”. Estudiaremos el universo a través de la materia, su estructura, propiedades y características a nivel atómico, molecular y macromolecular. Los temas que puedes encontrar a través de nuestras lecciones son: unidades de materia y energía, estructura atómica, tabla periódica, unidades y fórmulas químicas, enlace químico, nomenclatura química, reacciones químicas, estequiometría, gases calorimetría y soluciones.",
+                            Imagen = "https://hallearn.com/wp-content/uploads/2015/06/quimico.jpg",
+                            Nombre = "Quimica",
+                            ProfesorId = 3
                         });
                 });
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Capa.AccesoDatos.Context
 {
-    public class GenericContext: DbContext
+    public class GenericContext : DbContext
     {
         public virtual DbSet<Categoria> Categorias { get; set; }
         public virtual DbSet<Clase> Clases { get; set; }
@@ -31,18 +31,18 @@ namespace Capa.AccesoDatos.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Categoria>( entity =>
-            {
-                entity.HasKey(x => x.CategoriaId);
+            modelBuilder.Entity<Categoria>(entity =>
+           {
+               entity.HasKey(x => x.CategoriaId);
 
-                entity.Property(x => x.Descripcion).HasMaxLength(250).IsRequired();
+               entity.Property(x => x.Descripcion).HasMaxLength(250).IsRequired();
 
-                entity.HasData(
-                    new Categoria { CategoriaId = 1, Descripcion = "Programacion"},
-                    new Categoria { CategoriaId = 2, Descripcion = "Idiomas" },
-                    new Categoria { CategoriaId = 3, Descripcion = "Ciencias exactas" }
-                    );
-            });
+               entity.HasData(
+                   new Categoria { CategoriaId = 1, Descripcion = "Programacion" },
+                   new Categoria { CategoriaId = 2, Descripcion = "Idiomas" },
+                   new Categoria { CategoriaId = 3, Descripcion = "Ciencias exactas" }
+                   );
+           });
 
 
             modelBuilder.Entity<Clase>(entity =>
@@ -51,7 +51,7 @@ namespace Capa.AccesoDatos.Context
 
                 entity.Property(x => x.Descripcion).HasMaxLength(4096).IsRequired();
                 entity.Property(x => x.Tema).HasMaxLength(4096).IsRequired();
-               
+
 
                 entity.HasOne(x => x.CursoNavegacion)
                 .WithMany(x => x.ClasesNavegacion)
@@ -64,7 +64,12 @@ namespace Capa.AccesoDatos.Context
                 .WithOne(x => x.ClaseNavegation);
 
                 entity.HasData(
-                    new Clase { ClaseId = 1, CursoId = 1, Descripcion = "Introduccion a la programacion orientada a objetos", Tema = "La programación orientada a objetos es una evolución de la programación procedural basada en funciones. La POO nos permite agrupar secciones de código con funcionalidades comunes. " +
+                    new Clase
+                    {
+                        ClaseId = 1,
+                        CursoId = 1,
+                        Descripcion = "Introduccion a la programacion orientada a objetos",
+                        Tema = "La programación orientada a objetos es una evolución de la programación procedural basada en funciones. La POO nos permite agrupar secciones de código con funcionalidades comunes. " +
                     "Una de las principales desventajas de la programación procedural basada en funciones es su construcción, cuando una aplicación bajo este tipo de programación crece, la modificación del código se hace muy trabajosa y difícil debido a que el cambio de una sola línea en una función," +
                     " puede acarrear la modificación de muchas otras líneas de código pertenecientes a otras funciones que estén relacionadas. Con la programación orientada a objetos se pretende agrupar el código encapsulándolo y haciéndolo independiente, de manera que una modificación debida al crecimiento de la aplicación solo afecte a unas pocas líneas."
                     },
@@ -81,7 +86,7 @@ namespace Capa.AccesoDatos.Context
                     new Clase { ClaseId = 10, CursoId = 4, Descripcion = "Patrones de diseño", Tema = "En esta primera clase se presenta una definición de lo que son los patrones de diseño, así como explicar en qué momentos podría ser necesario utilizarlos" },
                     new Clase { ClaseId = 11, CursoId = 5, Descripcion = "Introduccion a Chino Mandarin", Tema = "El chino mandarín, o simplemente mandarín, es el conjunto de dialectos del chino mutuamente inteligibles que se hablan en el norte, centro y suroeste de China. En este curso se propone a enseñar las bases de este idioma para que posteriormente los estudiantes puedan aprendelo de forma más avanzada." });
 
-        });
+            });
 
 
             modelBuilder.Entity<Comentario>(entity =>
@@ -114,18 +119,71 @@ namespace Capa.AccesoDatos.Context
                 .HasForeignKey(x => x.CategoriaId);
 
                 entity.HasData(
-                    new Curso { Cantidad = 40, CategoriaId = 1, CursoId = 1, Descripcion = " Introducir a los estudiantes al paradigma de la programacion orientada a objetos para que puedan utilizar dicho paradigma en la realizacion de programas. Los estudiantes" +
-                    "recibiran una introduccion a los conceptos de TAD, recursion, manejos de excepciones y estructuras de datos compuestas.", Imagen = "https://blogthinkbig.com/wp-content/uploads/sites/4/2015/07/shutterstock_148972376.jpg?resize=610%2C407", Nombre = "Algoritmos y programacion.", ProfesorId = 1 },
-                    new Curso { Cantidad = 40, CategoriaId = 2, CursoId = 2, Descripcion = "Que los alumnos puedan familiarizarse con los patrones retóricos principales de la lengua inglesa en los usos y contextos de la comunicación académica,teniendo en cuenta el objetivo" +
-                    " / complejidad / especificidad de cada situación comunicativa y la demanda de los interlocutores.", Imagen = "https://www.altagracianoticias.com/wp-content/uploads/2019/06/ingles.jpg", Nombre = "Ingles aplicado", ProfesorId = 2 },
-                    new Curso { Cantidad = 40, CategoriaId = 3, CursoId = 3, Descripcion = "Favorecer la comprensión de los conceptos generales y específicos de electricidad, magnetismo y fenómenos ópticos. Incentivar el análisis de los fenómenos físicos en su aplicación al campo de la ingeniería.",
-                    Imagen = "https://img.freepik.com/vector-gratis/pizarra-fondo-formulas-fisica-ciencia_97886-4558.jpg?size=626&ext=jpg", Nombre = "Fisica II", ProfesorId = 3},
-                    new Curso { Cantidad = 4, CategoriaId = 1, CursoId = 4, Descripcion = "el estudiante tendrá los conocimientos de técnicas y herramientas que le permitan realizar software modular, reusable y extensible.Las técnicas mencionadas incluyen conocimientos teóricos y prácticos, habilidades,experiencias y sentido crítico, " +
-                    "todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.", Imagen = "https://www.ingestructurada.com/Images/Diagram2.jpg", Nombre = "Metodologias de programacion I", ProfesorId = 4},
-                    new Curso { Cantidad = 40, CategoriaId = 2, CursoId = 5, Descripcion = "A lo largo de este curso gratuito, aprenderás vocabulario extenso de chino mandarín, para describir personas y objetos, realizar comparaciones y exponer sus propias perspectivas utilizando estructuras de oraciones complejas y variadas. " +
-                    "El objetivo principal de este curso es que aprendas a hablar un nivel intermedio del idioma y para ello estudiarás los tonos y la entonación con prácticas diseñadas,y aprenderás a construir diálogos en un entorno empresarial.", Imagen = "https://www.ubo.cl/wp-content/uploads/chino_mandarin.jpg", Nombre = "Chino Mandarin", ProfesorId = 5 },
-                    new Curso { Cantidad = 4, CategoriaId = 3, CursoId = 6, Descripcion = "En este curso de Química General, aprenderemos los conceptos fundamentales de la “Ciencia Química”. Estudiaremos el universo a través de la materia, su estructura, propiedades y características a nivel atómico, molecular y macromolecular. Los temas que puedes encontrar a través de nuestras lecciones son:" +
-                    " unidades de materia y energía, estructura atómica, tabla periódica, unidades y fórmulas químicas, enlace químico, nomenclatura química, reacciones químicas, estequiometría, gases calorimetría y soluciones.", Imagen = "https://hallearn.com/wp-content/uploads/2015/06/quimico.jpg", Nombre = "Quimica", ProfesorId = 3});
+                    new Curso
+                    {
+                        Cantidad = 40,
+                        CategoriaId = 1,
+                        CursoId = 1,
+                        Descripcion = " Introducir a los estudiantes al paradigma de la programacion orientada a objetos para que puedan utilizar dicho paradigma en la realizacion de programas. Los estudiantes" +
+                    "recibiran una introduccion a los conceptos de TAD, recursion, manejos de excepciones y estructuras de datos compuestas.",
+                        Imagen = "https://blogthinkbig.com/wp-content/uploads/sites/4/2015/07/shutterstock_148972376.jpg?resize=610%2C407",
+                        Nombre = "Algoritmos y programacion.",
+                        ProfesorId = 1
+                    },
+                    new Curso
+                    {
+                        Cantidad = 40,
+                        CategoriaId = 2,
+                        CursoId = 2,
+                        Descripcion = "Que los alumnos puedan familiarizarse con los patrones retóricos principales de la lengua inglesa en los usos y contextos de la comunicación académica,teniendo en cuenta el objetivo" +
+                    " / complejidad / especificidad de cada situación comunicativa y la demanda de los interlocutores.",
+                        Imagen = "https://www.altagracianoticias.com/wp-content/uploads/2019/06/ingles.jpg",
+                        Nombre = "Ingles aplicado",
+                        ProfesorId = 2
+                    },
+                    new Curso
+                    {
+                        Cantidad = 40,
+                        CategoriaId = 3,
+                        CursoId = 3,
+                        Descripcion = "Favorecer la comprensión de los conceptos generales y específicos de electricidad, magnetismo y fenómenos ópticos. Incentivar el análisis de los fenómenos físicos en su aplicación al campo de la ingeniería.",
+                        Imagen = "https://img.freepik.com/vector-gratis/pizarra-fondo-formulas-fisica-ciencia_97886-4558.jpg?size=626&ext=jpg",
+                        Nombre = "Fisica II",
+                        ProfesorId = 3
+                    },
+                    new Curso
+                    {
+                        Cantidad = 4,
+                        CategoriaId = 1,
+                        CursoId = 4,
+                        Descripcion = "el estudiante tendrá los conocimientos de técnicas y herramientas que le permitan realizar software modular, reusable y extensible.Las técnicas mencionadas incluyen conocimientos teóricos y prácticos, habilidades,experiencias y sentido crítico, " +
+                    "todas ellas fundamentadas en teorías y técnicas sólidas, comprobadas y bien establecidas.",
+                        Imagen = "https://www.ingestructurada.com/Images/Diagram2.jpg",
+                        Nombre = "Metodologias de programacion I",
+                        ProfesorId = 4
+                    },
+                    new Curso
+                    {
+                        Cantidad = 40,
+                        CategoriaId = 2,
+                        CursoId = 5,
+                        Descripcion = "A lo largo de este curso gratuito, aprenderás vocabulario extenso de chino mandarín, para describir personas y objetos, realizar comparaciones y exponer sus propias perspectivas utilizando estructuras de oraciones complejas y variadas. " +
+                    "El objetivo principal de este curso es que aprendas a hablar un nivel intermedio del idioma y para ello estudiarás los tonos y la entonación con prácticas diseñadas,y aprenderás a construir diálogos en un entorno empresarial.",
+                        Imagen = "https://www.ubo.cl/wp-content/uploads/chino_mandarin.jpg",
+                        Nombre = "Chino Mandarin",
+                        ProfesorId = 5
+                    },
+                    new Curso
+                    {
+                        Cantidad = 4,
+                        CategoriaId = 3,
+                        CursoId = 6,
+                        Descripcion = "En este curso de Química General, aprenderemos los conceptos fundamentales de la “Ciencia Química”. Estudiaremos el universo a través de la materia, su estructura, propiedades y características a nivel atómico, molecular y macromolecular. Los temas que puedes encontrar a través de nuestras lecciones son:" +
+                    " unidades de materia y energía, estructura atómica, tabla periódica, unidades y fórmulas químicas, enlace químico, nomenclatura química, reacciones químicas, estequiometría, gases calorimetría y soluciones.",
+                        Imagen = "https://hallearn.com/wp-content/uploads/2015/06/quimico.jpg",
+                        Nombre = "Quimica",
+                        ProfesorId = 3
+                    });
 
             });
 
