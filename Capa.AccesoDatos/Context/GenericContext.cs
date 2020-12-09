@@ -26,7 +26,7 @@ namespace Capa.AccesoDatos.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS; Database = MicroCurso ; Trusted_Connection = True; ");
+            optionsBuilder.UseSqlServer("Server=CPX-GGXIFLAKH7B\\DBSJULIA;Database= MicroCurso;Trusted_Connection=True;MultipleActiveResultSets=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
