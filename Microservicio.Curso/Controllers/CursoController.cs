@@ -116,5 +116,19 @@ namespace Microservicio.Curso.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+
+        [HttpGet("GetClasesByIdClase")]
+        public IActionResult GetClasesByIdClase(int idClase)
+        {
+            try
+            {
+                return new JsonResult(service.GetClasesByIdClase(idClase)) { StatusCode = 200 };
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

@@ -184,5 +184,27 @@ namespace Capa.Aplication.Services
             return cursoUpdate;
         }
 
+
+
+        public List<ClaseResponseDTO> GetClasesByIdClase(int claseId)
+        {
+            var cursoId = repository.Traer<Clase>().FirstOrDefault(x => x.ClaseId == claseId).CursoId;
+            var clasedb = this.repository.Traer<Clase>().Where(x => x.CursoId == cursoId);
+
+            var ListClases = new List<ClaseResponseDTO>();
+
+            foreach (var c in clasedb)
+            {
+                var dto = new ClaseResponseDTO()
+                {
+                    ClaseId = c.ClaseId,
+                    CursoId = c.CursoId
+                };
+
+                ListClases.Add(dto);
+            }
+
+            return ListClases;
+        }
     }
 }

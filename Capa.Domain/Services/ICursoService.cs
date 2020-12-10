@@ -29,5 +29,8 @@ namespace Capa.Domain.Services
 
         CursoResponseAsyncDTO RestarCupoById(RequestIdCursoDTO idCurso);
 
+
+        List<ClaseResponseDTO> GetClasesByIdClase(int claseId);
+
     }
 }
